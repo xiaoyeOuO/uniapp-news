@@ -12,8 +12,8 @@
 			</scroll-view>
 		</view>
 		<view class="content">
-			<view class="row">
-				每一行的新闻
+			<view class="row" v-for="item in 10">
+				<newsbox></newsbox>
 			</view>
 		</view>
 	</view>
@@ -47,6 +47,13 @@
 			background: transparent !important;
 			-webkit-appearance: auto !important;
 			display: block;
+		}
+	}
+	.content{
+		padding: 30rpx;
+		.row{
+			border-bottom: 1px dotted #efefef;
+			
 		}
 	}
 </style>
