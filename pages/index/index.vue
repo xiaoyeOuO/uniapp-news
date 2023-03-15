@@ -1,52 +1,52 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
+	<view class="home">
+		<view class="scrollNav">
+			<scroll-view scroll-x class="navScroll">
+				<view class='scroll-item'>国内</view>
+				<view class='scroll-item'>国内</view>
+				<view class='scroll-item'>国内</view>
+				<view class='scroll-item'>国内</view>
+				<view class='scroll-item'>国内</view>
+				<view class='scroll-item'>国内</view>
+				<view class='scroll-item'>国内</view>
+			</scroll-view>
+		</view>
+		<view class="content">
+			<view class="row">
+				每一行的新闻
+			</view>
 		</view>
 	</view>
 </template>
 
 <script>
 	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
 
-		},
-		methods: {
-
-		}
 	}
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+<style lang='scss' scoped>
+	.navScroll {
+		height: 100rpx;
+		background: #f7f8fa;
+		white-space: nowrap;
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
+		.scroll-item {
+			font-size: 40rpx;
+			display: inline-block;
+			line-height: 100rpx;
+			padding: 0 30rpx;
+			color: #333;
+		}
 
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+		// 除去小程序兼容差异,在小程序中没有横向滚动条
+		/deep/ ::-webkit-scrollbar {
+			width: 4px !important;
+			height: 1px !important;
+			overflow: auto !important;
+			background: transparent !important;
+			-webkit-appearance: auto !important;
+			display: block;
+		}
 	}
 </style>
